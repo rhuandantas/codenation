@@ -1,6 +1,8 @@
 package br.com.codenation.models;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Time {
    private Long id;
@@ -8,6 +10,8 @@ public class Time {
    private LocalDate dataCriacao;
    private String corUniformePrincipal;
    private String corUniformeSecundario;
+   private List<Jogador> jogadores = new ArrayList<>();
+   private Long idCapitao;
 
    public Time(){}
 
@@ -57,5 +61,21 @@ public class Time {
 
     public void setCorUniformeSecundario(String corUniformeSecundario) {
         this.corUniformeSecundario = corUniformeSecundario;
+    }
+
+    public List<Jogador> getJogadores() {
+        return jogadores;
+    }
+
+    public void addJogadores(Jogador jogador) {
+        this.jogadores.add(jogador);
+    }
+
+    public Long getIdCapitao() {
+        return idCapitao;
+    }
+
+    public void setIdCapitao(Long idCapitao) {
+        this.idCapitao = idCapitao;
     }
 }
